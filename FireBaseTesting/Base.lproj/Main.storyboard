@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FireBaseTesting" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,84 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GuT-Qg-2Zf" customClass="TitleBoxView" customModule="FireBaseTesting" customModuleProvider="target">
+                                <rect key="frame" x="16" y="30" width="343" height="227"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSS-rw-vWj">
+                                        <rect key="frame" x="18" y="8" width="306" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="Iq8-ZB-7K5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Release The Kraken"/>
+                                        <connections>
+                                            <action selector="ReleaseKraken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gjH-tz-kNH"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8xU-Ks-Zb7">
+                                        <rect key="frame" x="16" y="161" width="310" height="31"/>
+                                        <connections>
+                                            <action selector="AggressionChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wPh-Tb-T5s"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Cp-Yp-5W3">
+                                        <rect key="frame" x="49" y="111" width="244" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Aggression Level"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUM-BX-0Nv">
+                                        <rect key="frame" x="8" y="198" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3a3-Qb-CrJ">
+                                        <rect key="frame" x="275" y="72" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="SquidFormSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="O41-zi-R0S"/>
+                                        </connections>
+                                    </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBH-GH-UiF">
+                                        <rect key="frame" x="18" y="73" width="160" height="30"/>
+                                        <state key="normal" title="Is it in Squid Form?"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.86376446490000003" green="0.9606025815" blue="0.99429506059999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="HBH-GH-UiF" firstAttribute="leading" secondItem="XSS-rw-vWj" secondAttribute="leading" id="0Wq-gb-khP"/>
+                                    <constraint firstItem="XSS-rw-vWj" firstAttribute="leading" secondItem="GuT-Qg-2Zf" secondAttribute="leading" constant="18" id="0ln-0c-lrr"/>
+                                    <constraint firstItem="HBH-GH-UiF" firstAttribute="leading" secondItem="8xU-Ks-Zb7" secondAttribute="leading" id="6IC-Kf-HgP"/>
+                                    <constraint firstItem="8xU-Ks-Zb7" firstAttribute="top" secondItem="5Cp-Yp-5W3" secondAttribute="bottom" constant="2" id="6ok-px-UZk"/>
+                                    <constraint firstItem="5Cp-Yp-5W3" firstAttribute="top" secondItem="3a3-Qb-CrJ" secondAttribute="bottom" constant="8" symbolic="YES" id="B1e-vR-O8j"/>
+                                    <constraint firstItem="XSS-rw-vWj" firstAttribute="centerX" secondItem="GuT-Qg-2Zf" secondAttribute="centerX" id="DdV-lz-23N"/>
+                                    <constraint firstItem="5Cp-Yp-5W3" firstAttribute="leading" secondItem="GuT-Qg-2Zf" secondAttribute="leading" constant="49" id="G1f-nz-HQR"/>
+                                    <constraint firstItem="5Cp-Yp-5W3" firstAttribute="centerX" secondItem="8xU-Ks-Zb7" secondAttribute="centerX" id="KmE-OB-Umi"/>
+                                    <constraint firstItem="3a3-Qb-CrJ" firstAttribute="leading" secondItem="HBH-GH-UiF" secondAttribute="trailing" constant="97" id="ZfB-rI-cIQ"/>
+                                    <constraint firstItem="3a3-Qb-CrJ" firstAttribute="trailing" secondItem="XSS-rw-vWj" secondAttribute="trailing" id="k6a-Gy-Y0D"/>
+                                    <constraint firstItem="3a3-Qb-CrJ" firstAttribute="trailing" secondItem="8xU-Ks-Zb7" secondAttribute="trailing" id="rco-dh-YDW"/>
+                                    <constraint firstItem="XSS-rw-vWj" firstAttribute="top" secondItem="GuT-Qg-2Zf" secondAttribute="topMargin" id="uPz-hJ-Brj"/>
+                                    <constraint firstItem="3a3-Qb-CrJ" firstAttribute="top" secondItem="XSS-rw-vWj" secondAttribute="bottom" constant="23" id="wxh-ab-h2t"/>
+                                    <constraint firstItem="5Cp-Yp-5W3" firstAttribute="top" secondItem="HBH-GH-UiF" secondAttribute="bottom" constant="8" symbolic="YES" id="y1I-nB-y7V"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GuT-Qg-2Zf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="ELk-YN-qWB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GuT-Qg-2Zf" secondAttribute="trailing" id="SZD-rF-Aab"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GuT-Qg-2Zf" secondAttribute="bottom" constant="410" id="ak3-HO-T7r"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="GuT-Qg-2Zf" secondAttribute="leading" id="pry-AP-QdZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="DebugLabel" destination="YUM-BX-0Nv" id="uLh-F5-nxP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>
